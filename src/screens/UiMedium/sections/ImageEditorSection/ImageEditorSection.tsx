@@ -158,7 +158,7 @@ export const ImageEditorSection = (): JSX.Element => {
           </Card>
         </aside>
 
-        <div className="flex flex-col gap-6 max-w-[1024px] mt-[610px] ml-[31px]">
+        <div className="flex flex-col gap-6 max-w-[1024px] mt-10 ml-[31px]">
           <Card className="border-slate-200 shadow-[0px_1px_2px_#0000000d] rounded-2xl">
             <CardContent className="flex flex-col gap-4 p-6">
               <h3 className="text-sm font-normal text-slate-900 [font-family:'Inter',Helvetica]">

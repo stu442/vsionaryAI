@@ -1,1 +1,38 @@
-{"nodes":[{"id":"src/screens/UiLowCognitive/UiLowCognitive.tsx","label":"UiLowCognitive","routes":["/*","/uiu451-u58-low-cognitive-signal-ui"],"type":"screen","dataModelId":"28:2","isRoot":true},{"id":"src/screens/Desktop/Desktop.tsx","label":"Desktop","routes":["/desktop"],"type":"screen","dataModelId":"2:2"},{"id":"src/screens/UiHighCognitive/UiHighCognitive.tsx","label":"UiHighCognitive","routes":["/uiu453-u58-high-cognitive-signal-ui"],"type":"screen","dataModelId":"5:379"},{"id":"src/screens/UiMedium/UiMedium.tsx","label":"UiMedium","routes":["/uiu452-u58-medium-cognitive-signal-ui"],"type":"screen","dataModelId":"5:722"}],"edges":[]}
+{
+  "nodes": [
+    {
+      "id": "src/screens/Desktop/Desktop.tsx",
+      "label": "Desktop",
+      "routes": [
+        "/"
+      ],
+      "dataModelId": "2:2",
+      "isRoot": true
+    },
+    {
+      "id": "src/screens/UiLowCognitive/UiLowCognitive.tsx",
+      "label": "UiLowCognitive",
+      "routes": [
+        "/ai/low-cognitive"
+      ],
+      "dataModelId": "28:2"
+    },
+    {
+      "id": "src/screens/UiHighCognitive/UiHighCognitive.tsx",
+      "label": "UiHighCognitive",
+      "routes": [
+        "/ai/high-cognitive"
+      ],
+      "dataModelId": "5:379"
+    },
+    {
+      "id": "src/screens/UiMedium/UiMedium.tsx",
+      "label": "UiMedium",
+      "routes": [
+        "/ai/medium-cognitive"
+      ],
+      "dataModelId": "5:722"
+    }
+  ],
+  "edges": []
+}
