@@ -1,0 +1,1 @@
+export { UiLowCognitive } from "./UiLowCognitive";

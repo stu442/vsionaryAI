@@ -1,0 +1,1 @@
+export { UiMedium } from "./UiMedium";

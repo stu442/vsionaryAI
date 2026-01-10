@@ -1,0 +1,1 @@
+export { UiHighCognitive } from "./UiHighCognitive";

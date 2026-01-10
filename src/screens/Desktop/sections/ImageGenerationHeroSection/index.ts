@@ -1,0 +1,1 @@
+export { ImageGenerationHeroSection } from "./ImageGenerationHeroSection";
