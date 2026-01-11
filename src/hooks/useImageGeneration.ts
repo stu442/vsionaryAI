@@ -34,8 +34,13 @@ export const useImageGeneration = () => {
         return usage.count;
     });
 
-    const handleGenerate = async () => {
-        if (!prompt.trim()) return;
+    const handleGenerate = async (overridePrompt?: string) => {
+        const promptToUse = overridePrompt || prompt;
+        if (!promptToUse.trim()) return;
+
+        if (overridePrompt) {
+            setPrompt(overridePrompt);
+        }
 
         setIsLoading(true);
         setError(null);
@@ -47,9 +52,9 @@ export const useImageGeneration = () => {
             return;
         }
         try {
-            const data = await imageService.generateImage(prompt);
+            const data = await imageService.generateImage(promptToUse);
             setGeneratedImage(data.imageUrl);
-            console.log("Generating image for prompt:", prompt);
+            console.log("Generating image for prompt:", promptToUse);
 
             const nextUsage = { date: usage.date, count: usage.count + 1 };
             saveUsage(nextUsage);
