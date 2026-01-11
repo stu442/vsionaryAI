@@ -35,19 +35,16 @@ export const ImageGenerationHeroSection = (): JSX.Element => {
 
   const navigate = useNavigate();
 
-  const onGenerateClick = () => {
+  const onGenerateClick = (path: string) => {
     if (!prompt.trim()) return;
-
-    // Simple logic to decide cognitive level
-    let path = "/ai/low-cognitive";
-    if (prompt.length > 50) {
-      path = "/ai/high-cognitive";
-    } else if (prompt.length > 20) {
-      path = "/ai/medium-cognitive";
-    }
-
     navigate(`${path}?prompt=${encodeURIComponent(prompt)}`);
   };
+
+  const generateButtons = [
+    { label: "Generate", path: "/ai/low-cognitive" },
+    { label: "Generate", path: "/ai/medium-cognitive" },
+    { label: "Generate", path: "/ai/high-cognitive" },
+  ];
 
   return (
     <section className="flex flex-col max-w-4xl w-full items-center gap-16 pt-24 pb-48 px-6">
@@ -83,22 +80,24 @@ export const ImageGenerationHeroSection = (): JSX.Element => {
               />
             </div>
 
-            <div className="flex flex-col items-center gap-6">
-              <Button
-                onClick={onGenerateClick}
-                disabled={isLoading || !prompt.trim()}
-                className="px-12 py-4 h-auto bg-indigo-500 hover:bg-indigo-600 rounded-xl transition-colors disabled:opacity-50"
-              >
-                {isLoading ? (
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                ) : (
-                  <SparklesIcon className="w-5 h-5" />
-                )}
-                <span className="pl-3 [font-family:'Inter',Helvetica] font-normal text-white text-lg text-center tracking-[0] leading-7">
-                  {isLoading ? "Generating..." : "Generate"}
-                </span>
-              </Button>
-
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {generateButtons.map((button) => (
+                <Button
+                  key={button.path}
+                  onClick={() => onGenerateClick(button.path)}
+                  disabled={isLoading || !prompt.trim()}
+                  className="px-8 py-4 h-auto bg-indigo-500 hover:bg-indigo-600 rounded-xl transition-colors disabled:opacity-50"
+                >
+                  {isLoading ? (
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                  ) : (
+                    <SparklesIcon className="w-5 h-5" />
+                  )}
+                  <span className="pl-3 [font-family:'Inter',Helvetica] font-normal text-white text-lg text-center tracking-[0] leading-7">
+                    {isLoading ? "Generating..." : button.label}
+                  </span>
+                </Button>
+              ))}
             </div>
           </div>
         </CardContent>
