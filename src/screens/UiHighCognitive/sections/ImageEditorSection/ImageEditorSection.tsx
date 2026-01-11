@@ -62,6 +62,11 @@ export const ImageEditorSection = (): JSX.Element => {
               handleGenerate(prompt);
             }}
             onVariations={handleVariations}
+            onRefinePrompt={(newPrompt) => {
+              console.log("✏️ [UiHighCognitive] Refining prompt:", newPrompt);
+              setPrompt(newPrompt); // Update local state so UI reflects it
+              handleGenerate(newPrompt);
+            }}
           />
         </div>
         <div className="w-[320px] flex-shrink-0 sticky top-6">
