@@ -1,4 +1,5 @@
 import { Button } from "../../../../components/ui/button";
+import { Logo } from "../../../../components/Logo";
 
 const navigationLinks = [
   { label: "Features" },
@@ -11,16 +12,7 @@ export const NavigationBarSection = (): JSX.Element => {
   return (
     <header className="flex flex-col items-start px-[104px] py-4 w-full bg-white border-b opacity-0 animate-fade-in">
       <nav className="flex items-center justify-between w-full">
-        <div className="inline-flex items-center gap-3">
-          <img
-            className="w-8 h-8"
-            alt="ImageAI Logo"
-            src="https://c.animaapp.com/mk80hrbdo2FHxK/img/background-1.svg"
-          />
-          <span className="font-normal text-gray-900 text-xl leading-7 [font-family:'Inter',Helvetica] whitespace-nowrap">
-            ImageAI
-          </span>
-        </div>
+        <Logo />
 
         <ul className="inline-flex items-center gap-8">
           {navigationLinks.map((link, index) => (

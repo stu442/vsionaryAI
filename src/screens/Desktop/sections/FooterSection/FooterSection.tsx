@@ -1,4 +1,5 @@
 import { Button } from "../../../../components/ui/button";
+import { Logo } from "../../../../components/Logo";
 
 const productLinks = [
   { label: "Features", href: "#" },
@@ -27,16 +28,7 @@ export const FooterSection = (): JSX.Element => {
       <div className="flex flex-col max-w-screen-xl mx-auto items-start gap-8 px-6 py-12 w-full">
         <div className="grid grid-cols-4 gap-8 w-full">
           <div className="flex flex-col items-start gap-4">
-            <div className="flex items-center gap-3">
-              <img
-                className="w-8 h-8"
-                alt="ImageAI Logo"
-                src="https://c.animaapp.com/mk80hrbdo2FHxK/img/background-1.svg"
-              />
-              <span className="font-normal text-gray-900 text-xl leading-7 [font-family:'Inter',Helvetica]">
-                ImageAI
-              </span>
-            </div>
+            <Logo />
             <p className="font-normal text-gray-600 text-sm leading-[22.8px] [font-family:'Inter',Helvetica]">
               The most advanced AI image generation
               <br />
@@ -106,7 +98,7 @@ export const FooterSection = (): JSX.Element => {
 
         <div className="flex items-center justify-between pt-8 w-full border-t border-gray-200">
           <p className="font-normal text-gray-600 text-sm leading-5 [font-family:'Inter',Helvetica]">
-            © 2024 ImageAI. All rights reserved.
+            © 2026 Visionary AI. All rights reserved.
           </p>
           <img
             className="h-5"
