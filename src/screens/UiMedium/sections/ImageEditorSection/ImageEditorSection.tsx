@@ -11,7 +11,7 @@ import { EditorTip } from "./components/EditorTip";
 export const ImageEditorSection = (): JSX.Element => {
   const [searchParams] = useSearchParams();
   const urlPrompt = searchParams.get("prompt");
-  const { prompt, setPrompt, isLoading, generatedImage, handleGenerate } = useImageGeneration();
+  const { prompt, setPrompt, isLoading, generatedImage, handleGenerate, handleRefine } = useImageGeneration();
   const [selectedRefinements, setSelectedRefinements] = useState<string[]>([]);
 
   useEffect(() => {
@@ -41,9 +41,9 @@ export const ImageEditorSection = (): JSX.Element => {
 
   const handleVariations = () => {
     const refinementText = selectedRefinements.join(", ");
-    const finalPrompt = refinementText ? `${prompt}, ${refinementText}` : prompt;
-    console.log("🎨 [UiMedium] Creating Variations with:", finalPrompt);
-    handleGenerate(finalPrompt);
+    if (!refinementText.trim()) return;
+    console.log("🎨 [UiMedium] Creating Variations with:", refinementText);
+    handleRefine(refinementText);
   };
 
   const handleSavePrompt = (newPrompt: string) => {

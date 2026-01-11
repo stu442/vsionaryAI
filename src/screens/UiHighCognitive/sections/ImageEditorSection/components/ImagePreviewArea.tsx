@@ -22,15 +22,15 @@ export const ImagePreviewArea = ({
     onRefinePrompt,
 }: ImagePreviewAreaProps): JSX.Element => {
     const [isEditing, setIsEditing] = useState(false);
-    const [editedPrompt, setEditedPrompt] = useState(prompt);
+    const [refineText, setRefineText] = useState("");
 
     useEffect(() => {
-        setEditedPrompt(prompt);
-    }, [prompt]);
+        setRefineText("");
+    }, [imageSrc]);
 
     const handleRefine = () => {
         if (onRefinePrompt) {
-            onRefinePrompt(editedPrompt);
+            onRefinePrompt(refineText);
         }
         setIsEditing(false);
     };
@@ -126,7 +126,7 @@ export const ImagePreviewArea = ({
                 {isEditing ? (
                     <div className="w-full flex flex-col gap-3 bg-white p-4 rounded-xl border border-purple-200 shadow-sm">
                         <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-gray-900">Refine Prompt</span>
+                            <span className="text-sm font-medium text-gray-900">Refine Text</span>
                             <Button
                                 variant="ghost"
                                 size="sm"
@@ -137,10 +137,10 @@ export const ImagePreviewArea = ({
                             </Button>
                         </div>
                         <Textarea
-                            value={editedPrompt}
-                            onChange={(e) => setEditedPrompt(e.target.value)}
+                            value={refineText}
+                            onChange={(e) => setRefineText(e.target.value)}
                             className="bg-gray-50 border-purple-200 text-gray-900 min-h-[80px] focus-visible:ring-purple-500/50 placeholder:text-gray-400"
-                            placeholder="Describe your image in detail..."
+                            placeholder="Describe how to improve this image..."
                         />
                         <div className="flex justify-end gap-2">
                             <Button
@@ -152,7 +152,7 @@ export const ImagePreviewArea = ({
                             </Button>
                             <Button
                                 onClick={handleRefine}
-                                disabled={isLoading || !editedPrompt.trim()}
+                                disabled={isLoading || !refineText.trim()}
                                 className="bg-purple-600 hover:bg-purple-700 text-white shadow-md shadow-purple-500/20"
                             >
                                 {isLoading ? (

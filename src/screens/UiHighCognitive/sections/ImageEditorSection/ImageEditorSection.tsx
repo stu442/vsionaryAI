@@ -9,7 +9,7 @@ import { ImprovementFooter } from "./components/ImprovementFooter";
 export const ImageEditorSection = (): JSX.Element => {
   const [searchParams] = useSearchParams();
   const urlPrompt = searchParams.get("prompt");
-  const { prompt, setPrompt, isLoading, generatedImage, handleGenerate } = useImageGeneration();
+  const { prompt, setPrompt, isLoading, generatedImage, handleGenerate, handleRefine } = useImageGeneration();
 
   // Change state to array for toggling
   const [selectedRefinements, setSelectedRefinements] = useState<string[]>([]);
@@ -42,9 +42,9 @@ export const ImageEditorSection = (): JSX.Element => {
   const handleVariations = () => {
     // Join selected refinements with comma
     const refinementText = selectedRefinements.join(", ");
-    const finalPrompt = refinementText ? `${prompt}, ${refinementText}` : prompt;
-    console.log("🎨 [UiHighCognitive] Creating Variations with:", finalPrompt);
-    handleGenerate(finalPrompt);
+    if (!refinementText.trim()) return;
+    console.log("🎨 [UiHighCognitive] Creating Variations with:", refinementText);
+    handleRefine(refinementText);
   };
 
   return (
@@ -63,9 +63,8 @@ export const ImageEditorSection = (): JSX.Element => {
             }}
             onVariations={handleVariations}
             onRefinePrompt={(newPrompt) => {
-              console.log("✏️ [UiHighCognitive] Refining prompt:", newPrompt);
-              setPrompt(newPrompt); // Update local state so UI reflects it
-              handleGenerate(newPrompt);
+              console.log("✏️ [UiHighCognitive] Refining with text:", newPrompt);
+              handleRefine(newPrompt);
             }}
           />
         </div>

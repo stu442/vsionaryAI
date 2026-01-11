@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { imageService } from "../api/image";
 
-const DAILY_LIMIT = 5;
+const DAILY_LIMIT = 10;
 const STORAGE_KEY = "image-generation-usage";
 
 const getTodayKey = () => new Date().toISOString().slice(0, 10);
@@ -69,6 +69,47 @@ export const useImageGeneration = () => {
         setIsLoading(false);
     };
 
+    const handleRefine = async (refineText: string, overrideImageUrl?: string) => {
+        const refineTextToUse = refineText.trim();
+        if (!refineTextToUse) return;
+
+        const imageUrlToUse = overrideImageUrl || generatedImage;
+        if (!imageUrlToUse) {
+            setError("기존 이미지가 없어 Refine을 진행할 수 없습니다.");
+            return;
+        }
+
+        setIsLoading(true);
+        setError(null);
+
+        const usage = loadUsage();
+        if (usage.count >= DAILY_LIMIT) {
+            setIsLoading(false);
+            setError("오늘의 이미지 생성 한도를 모두 사용했습니다.");
+            return;
+        }
+
+        try {
+            console.log("🧩 Calling Image Edit API with refine text:", refineTextToUse);
+            const data = await imageService.editImage(imageUrlToUse, refineTextToUse);
+            setGeneratedImage(data.imageUrl);
+
+            const nextUsage = { date: usage.date, count: usage.count + 1 };
+            saveUsage(nextUsage);
+            setDailyCount(nextUsage.count);
+        } catch (err) {
+            console.error("Error refining image:", err);
+            setError("AI 이미지 보정 중 오류가 발생했습니다.");
+
+            setTimeout(() => {
+                setGeneratedImage("https://c.animaapp.com/mk80hrbdo2FHxK/img/serene-mountain-landscape-at-golden-hour-with-snow-capped-peaks-.png");
+                setIsLoading(false);
+            }, 1500);
+            return;
+        }
+        setIsLoading(false);
+    };
+
     return {
         prompt,
         setPrompt,
@@ -78,5 +119,6 @@ export const useImageGeneration = () => {
         dailyCount,
         dailyLimit: DAILY_LIMIT,
         handleGenerate,
+        handleRefine,
     };
 };
