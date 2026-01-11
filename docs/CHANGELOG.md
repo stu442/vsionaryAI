@@ -18,6 +18,7 @@
 - Storybook/Vite/Vitest/Playwright 산출물 gitignore 추가.
 - UiHighCognitive/UiMedium/UiLowCognitive 하위 컴포넌트 Storybook 스토리 추가.
 - Storybook 기본 샘플 스토리 제거.
+- Storybook 스토리 파일을 `src/stories/screens`로 이동.
 - UiHighCognitive 화면의 이미지 에디터 섹션(ImageEditorSection) 기능 연동.
   - QuickRefinements: 프롬프트 세부 조정(조명, 색상 등) 버튼 클릭 시 재생성 로직 및 로딩 상태 추가, 호버 시 텍스트 색상 가독성 개선.
   - ImagePreviewArea: 재생성(Regenerate) 버튼 활성화 및 로딩 UI 적용, 호버 시 텍스트 색상 가독성 개선, 긴 프롬프트 표시 시 레이아웃 깨짐 방지(줄바꿈 허용).

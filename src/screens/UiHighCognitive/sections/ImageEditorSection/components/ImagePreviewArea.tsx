@@ -36,7 +36,7 @@ export const ImagePreviewArea = ({ isLoading, imageSrc, prompt, onRegenerate, on
                 />
             </div>
 
-            <div className="bg-[#13131a] overflow-hidden border-[#a855f74c] shadow-[0px_25px_50px_-12px_#00000040] flex flex-col items-start w-full rounded-xl border-2 border-solid translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
+            <div className="bg-[#13131a] overflow-hidden border-[#a855f74c] shadow-[0px_25px_50px_-12px_#00000040] flex flex-col items-start -rounded-xl border-2 border-solid translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
                 <div className="flex flex-col w-full items-start relative">
                     <div className="w-full max-h-[500px] h-[500px] relative">
                         {isLoading ? (
