@@ -2,16 +2,13 @@ import { PlusIcon, SearchIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "../../../../../components/ui/button";
 import { Input } from "../../../../../components/ui/input";
+import { Logo } from "../../../../../components/Logo";
 
 export const SessionHeader = (): JSX.Element => {
     return (
         <header className="flex flex-col gap-4 p-5 border-b border-border">
             <div className="flex items-center justify-between">
-                <Link to="/" className="hover:opacity-80 transition-opacity">
-                    <h1 className="text-xl font-normal text-gray-900 [font-family:'Inter',Helvetica]">
-                        ImageCraft AI
-                    </h1>
-                </Link>
+                <Logo />
                 <Button variant="ghost" size="icon" className="h-9 w-9">
                     <PlusIcon className="h-5 w-5" />
                 </Button>
