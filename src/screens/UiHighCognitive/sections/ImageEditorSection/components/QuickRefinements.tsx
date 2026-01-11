@@ -26,14 +26,14 @@ const quickRefinementsData = [
 ];
 
 interface QuickRefinementsProps {
-    onRefine?: (refinement: string) => void;
-    selectedRefinements?: string[];
-    isLoading?: boolean;
+  onRefine?: (refinement: string) => void;
+  selectedRefinements?: string[];
+  isLoading?: boolean;
 }
 
 export const QuickRefinements = ({ onRefine, selectedRefinements = [], isLoading = false }: QuickRefinementsProps): JSX.Element => {
   return (
-    <aside className="flex gap-4 p-5 bg-gray-200 rounded-xl flex-col items-start w-fit translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
+    <aside className="flex gap-4 p-5 bg-gray-200 rounded-xl flex-col items-start w-full translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
       <h3 className="font-normal text-gray-700 text-sm tracking-[0] leading-5 whitespace-nowrap [font-family:'Inter',Helvetica]">
         Quick Refinements
       </h3>
@@ -48,20 +48,20 @@ export const QuickRefinements = ({ onRefine, selectedRefinements = [], isLoading
               onClick={() => onRefine?.(refinement.value)}
               disabled={isLoading}
               className={cn(
-                "h-auto flex items-center justify-start gap-2 px-4 py-2.5 rounded-lg border border-solid disabled:opacity-50 disabled:cursor-not-allowed transition-colors whitespace-nowrap",
-                isSelected 
-                  ? "bg-purple-900/50 border-purple-500 text-white hover:bg-purple-900/70" 
+                "h-auto w-full flex items-center justify-start gap-2 px-4 py-2.5 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors whitespace-nowrap",
+                isSelected
+                  ? "bg-purple-900/50 border-purple-500 text-white hover:bg-purple-900/70"
                   : "bg-[#1a1a24] border-gray-700 text-gray-300 hover:bg-[#252530] hover:text-white"
               )}
             >
               {isLoading ? (
-                  <Loader2 className="w-4 h-4 animate-spin text-gray-300" />
+                <Loader2 className="w-4 h-4 animate-spin text-gray-300" />
               ) : (
-                  <img
-                    className="flex-shrink-0"
-                    alt={refinement.label}
-                    src={refinement.icon}
-                  />
+                <img
+                  className="flex-shrink-0"
+                  alt={refinement.label}
+                  src={refinement.icon}
+                />
               )}
               <span className="font-normal text-sm text-center tracking-[0] leading-5 whitespace-nowrap [font-family:'Inter',Helvetica]">
                 {refinement.label}

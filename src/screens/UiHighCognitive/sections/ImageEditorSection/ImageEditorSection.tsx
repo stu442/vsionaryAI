@@ -10,7 +10,7 @@ export const ImageEditorSection = (): JSX.Element => {
   const [searchParams] = useSearchParams();
   const urlPrompt = searchParams.get("prompt");
   const { prompt, setPrompt, isLoading, generatedImage, handleGenerate } = useImageGeneration();
-  
+
   // Change state to array for toggling
   const [selectedRefinements, setSelectedRefinements] = useState<string[]>([]);
 
@@ -51,22 +51,26 @@ export const ImageEditorSection = (): JSX.Element => {
     <section className="flex flex-col items-start flex-1 self-stretch grow bg-gray-50">
       <EditorHeader title={prompt || "Cyberpunk cityscape refinement"} />
 
-      <div className="flex-1 w-full grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 p-6">
-        <ImagePreviewArea
-          isLoading={isLoading}
-          imageSrc={generatedImage || "https://c.animaapp.com/mk80hrbdo2FHxK/img/futuristic-city-skyline-at-sunset-with-many-flying-cars--vibrant.png"}
-          prompt={prompt || "Futuristic cityscape with dramatic sky"}
-          onRegenerate={() => {
-            console.log("🔄 [UiHighCognitive] Regenerating original prompt:", prompt);
-            handleGenerate(prompt);
-          }} // Generate with original prompt only
-          onVariations={handleVariations} // Generate with original + refinements
-        />
-        <QuickRefinements 
-          isLoading={isLoading}
-          onRefine={handleToggleRefinement}
-          selectedRefinements={selectedRefinements}
-        />
+      <div className="flex-1 flex gap-8 p-8 max-w-[1600px] ">
+        <div className="flex-1 min-w-0">
+          <ImagePreviewArea
+            isLoading={isLoading}
+            imageSrc={generatedImage || "https://c.animaapp.com/mk80hrbdo2FHxK/img/futuristic-city-skyline-at-sunset-with-many-flying-cars--vibrant.png"}
+            prompt={prompt || "Futuristic cityscape with dramatic sky"}
+            onRegenerate={() => {
+              console.log("🔄 [UiHighCognitive] Regenerating original prompt:", prompt);
+              handleGenerate(prompt);
+            }}
+            onVariations={handleVariations}
+          />
+        </div>
+        <div className="w-[320px] flex-shrink-0 sticky top-6">
+          <QuickRefinements
+            isLoading={isLoading}
+            onRefine={handleToggleRefinement}
+            selectedRefinements={selectedRefinements}
+          />
+        </div>
       </div>
 
       <ImprovementFooter />
