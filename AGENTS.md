@@ -4,6 +4,7 @@
 - Responses in this repository should be written in Korean.
 - Whenever environment variables change or are added, update `.env.example`.
 - Create and maintain `docs/CHANGELOG.md` in Korean, with detailed entries by date.
+- 작업 완료 시 수정한 파일 목록을 반드시 안내한다.
 
 ## Project Structure & Module Organization
 - `src/` holds application code.
