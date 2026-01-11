@@ -10,11 +10,15 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+storybook-static
+.vite
 *.local
 .env
 .env.*.local
 .eslintcache
 coverage
+test-results
+playwright-report
 .cache
 .turbo
 .pnpm-store
