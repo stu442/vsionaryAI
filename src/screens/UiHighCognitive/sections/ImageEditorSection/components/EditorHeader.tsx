@@ -11,7 +11,7 @@ export const EditorHeader = ({ title }: EditorHeaderProps): JSX.Element => {
         <header className="flex flex-col items-start px-6 py-4 w-full bg-white border-b border-gray-200">
             <div className="flex items-center justify-between w-full">
                 <div className="inline-flex items-center gap-4">
-                    <h1 className="font-normal text-gray-900 text-lg tracking-[0] leading-7 whitespace-nowrap [font-family:'Inter',Helvetica]">
+                    <h1 className="font-normal text-gray-900 text-lg tracking-[0] leading-7 truncate max-w-[400px] [font-family:'Inter',Helvetica]">
                         {title}
                     </h1>
 

@@ -7,9 +7,10 @@ interface ImagePreviewAreaProps {
     imageSrc: string;
     prompt: string;
     onRegenerate?: () => void;
+    onVariations?: () => void;
 }
 
-export const ImagePreviewArea = ({ isLoading, imageSrc, prompt, onRegenerate }: ImagePreviewAreaProps): JSX.Element => {
+export const ImagePreviewArea = ({ isLoading, imageSrc, prompt, onRegenerate, onVariations }: ImagePreviewAreaProps): JSX.Element => {
     return (
         <div className="flex flex-col items-start gap-4">
             <div className="flex items-center justify-between w-full">
@@ -112,7 +113,9 @@ export const ImagePreviewArea = ({ isLoading, imageSrc, prompt, onRegenerate }: 
 
                 <Button
                     variant="outline"
-                    className="h-auto inline-flex items-center justify-center gap-2 px-[55px] py-3.5 bg-[#1a1a24] hover:bg-[#252530] text-white hover:text-white rounded-lg border border-solid border-gray-700"
+                    onClick={onVariations}
+                    disabled={isLoading}
+                    className="h-auto inline-flex items-center justify-center gap-2 px-[55px] py-3.5 bg-[#1a1a24] hover:bg-[#252530] text-white hover:text-white rounded-lg border border-solid border-gray-700 disabled:opacity-50"
                 >
                     <img
                         className="flex-shrink-0"
