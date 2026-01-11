@@ -70,7 +70,7 @@ export const ImagePreview = ({ isLoading, imageSrc, prompt }: ImagePreviewProps)
 
                         <div className="absolute bottom-0 left-0 right-0 p-4 bg-[linear-gradient(0deg,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0)_100%)]">
                             <div className="flex flex-col gap-1">
-                                <p className="text-sm font-medium text-white [font-family:'Inter',Helvetica]">
+                                <p className="text-sm font-medium text-white truncate [font-family:'Inter',Helvetica]">
                                     {prompt}
                                 </p>
                                 <p className="text-xs font-normal text-gray-400 [font-family:'Inter',Helvetica]">
