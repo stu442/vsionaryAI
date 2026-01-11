@@ -19,6 +19,7 @@
 - UiHighCognitive/UiMedium/UiLowCognitive 하위 컴포넌트 Storybook 스토리 추가.
 - Storybook 기본 샘플 스토리 제거.
 - Storybook 스토리 파일을 `src/stories/screens`로 이동.
+- 이미지 생성 클라이언트 호출 한도를 10회로 상향.
 - UiHighCognitive 화면의 이미지 에디터 섹션(ImageEditorSection) 기능 연동.
   - QuickRefinements: 프롬프트 세부 조정(조명, 색상 등) 버튼 클릭 시 재생성 로직 및 로딩 상태 추가, 호버 시 텍스트 색상 가독성 개선.
   - ImagePreviewArea: 재생성(Regenerate) 버튼 활성화 및 로딩 UI 적용, 호버 시 텍스트 색상 가독성 개선, 긴 프롬프트 표시 시 레이아웃 깨짐 방지(줄바꿈 허용).
@@ -36,3 +37,5 @@
 - UiLowCognitive 화면에서 프롬프트 편집 모드를 추가하고 Edit 버튼으로 수정/저장 및 취소 동작 지원.
 - UiLowCognitive 화면의 "Use this result" 버튼 클릭 시 홈으로 이동하도록 라우팅 연결.
 - UiLowCognitive 프롬프트 저장 시 변경된 문구로 이미지 재생성 API 호출.
+- 이미지 Refine용 API(`/v1/images/edits`) 연동 추가 및 기존 이미지+Refine Text 기반 보정 로직 적용.
+- UiHighCognitive/UiMedium 이미지 에디터에서 Refine/Variations 동작을 기존 이미지 기반 편집 호출로 변경.
