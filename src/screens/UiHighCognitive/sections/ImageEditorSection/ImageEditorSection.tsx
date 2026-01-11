@@ -51,8 +51,8 @@ export const ImageEditorSection = (): JSX.Element => {
     <section className="flex flex-col items-start flex-1 self-stretch grow bg-gray-50">
       <EditorHeader title={prompt || "Cyberpunk cityscape refinement"} />
 
-      <div className="flex-1 flex gap-8 p-8 max-w-[1600px] ">
-        <div className="flex-1 min-w-0">
+      <div className="flex-1 w-full flex gap-8 p-8 max-w-[1600px] mx-auto">
+        <div className="flex-1 min-w-0 w-full">
           <ImagePreviewArea
             isLoading={isLoading}
             imageSrc={generatedImage || "https://c.animaapp.com/mk80hrbdo2FHxK/img/futuristic-city-skyline-at-sunset-with-many-flying-cars--vibrant.png"}

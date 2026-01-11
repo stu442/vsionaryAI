@@ -61,13 +61,8 @@ export const ImprovementFooter = (): JSX.Element => {
 
                         <Button className="h-auto inline-flex items-center gap-2 px-6 py-2.5 bg-indigo-500 hover:bg-indigo-600 rounded-lg shadow-[0px_1px_2px_#0000000d]">
                             <span className="font-normal text-white text-sm text-center tracking-[0] leading-5 whitespace-nowrap [font-family:'Inter',Helvetica]">
-                                Generate Next Version
+                                Use this result
                             </span>
-                            <img
-                                className="flex-shrink-0"
-                                alt="Arrow"
-                                src="https://c.animaapp.com/mk80hrbdo2FHxK/img/container-25.svg"
-                            />
                         </Button>
                     </div>
                 </div>
