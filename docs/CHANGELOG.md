@@ -10,3 +10,10 @@
 - 환경 변수 예시 파일에 이미지 API 토글 항목 추가.
 - 저장소 가이드 문서(AGENTS) 생성 및 운영 규칙 정리.
 - 빌드/타입스크립트 설정 및 의존성 메타데이터 업데이트.
+- UiHighCognitive 화면의 이미지 에디터 섹션(ImageEditorSection) 기능 연동.
+  - QuickRefinements: 프롬프트 세부 조정(조명, 색상 등) 버튼 클릭 시 재생성 로직 및 로딩 상태 추가, 호버 시 텍스트 색상 가독성 개선.
+  - ImagePreviewArea: 재생성(Regenerate) 버튼 활성화 및 로딩 UI 적용, 호버 시 텍스트 색상 가독성 개선, 긴 프롬프트 표시 시 레이아웃 깨짐 방지(줄바꿈 허용).
+  - ImageEditorSection: useImageGeneration 훅을 통해 자식 컴포넌트(미리보기, 조정 버튼) 기능 연결.
+- UiLowCognitive 화면에서 프롬프트 편집 모드를 추가하고 Edit 버튼으로 수정/저장 및 취소 동작 지원.
+- UiLowCognitive 화면의 "Use this result" 버튼 클릭 시 홈으로 이동하도록 라우팅 연결.
+- UiLowCognitive 프롬프트 저장 시 변경된 문구로 이미지 재생성 API 호출.
