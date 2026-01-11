@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "../../../components/ui/avatar";
 
 const navigationLinks = [
@@ -10,7 +11,7 @@ export const LowCognitiveHeader = (): JSX.Element => {
     return (
         <header className="w-full bg-white border-b border-gray-200">
             <div className="max-w-[1440px] mx-auto flex items-center justify-between px-8 py-4">
-                <div className="flex items-center gap-3">
+                <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
                     <img
                         className="w-8 h-8"
                         alt="Visionary AI Logo"
@@ -19,7 +20,7 @@ export const LowCognitiveHeader = (): JSX.Element => {
                     <span className="[font-family:'Inter',Helvetica] font-normal text-gray-900 text-xl leading-7">
                         Visionary AI
                     </span>
-                </div>
+                </Link>
 
                 <nav className="flex items-center gap-6">
                     {navigationLinks.map((link, index) => (

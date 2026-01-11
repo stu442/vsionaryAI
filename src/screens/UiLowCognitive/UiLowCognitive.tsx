@@ -1,5 +1,5 @@
 import { EditIcon, Loader2 } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { useImageGeneration } from "../../hooks/useImageGeneration";
@@ -19,6 +19,8 @@ export const UiLowCognitive = (): JSX.Element => {
   const [searchParams] = useSearchParams();
   const urlPrompt = searchParams.get("prompt");
   const { prompt, setPrompt, isLoading, generatedImage, handleGenerate } = useImageGeneration();
+  const [isEditingPrompt, setIsEditingPrompt] = useState(false);
+  const [draftPrompt, setDraftPrompt] = useState("");
 
   useEffect(() => {
     if (urlPrompt) {
@@ -35,6 +37,23 @@ export const UiLowCognitive = (): JSX.Element => {
   }, [prompt, urlPrompt, generatedImage, isLoading, handleGenerate]);
 
   const displayPrompt = prompt || SAMPLE_PROMPT;
+  const canSavePrompt = draftPrompt.trim().length > 0;
+
+  const handleEditClick = () => {
+    setDraftPrompt(displayPrompt);
+    setIsEditingPrompt(true);
+  };
+
+  const handleCancelEdit = () => {
+    setIsEditingPrompt(false);
+  };
+
+  const handleSavePrompt = () => {
+    const nextPrompt = draftPrompt.trim();
+    setPrompt(nextPrompt);
+    handleGenerate(nextPrompt);
+    setIsEditingPrompt(false);
+  };
 
   return (
     <div
@@ -44,15 +63,31 @@ export const UiLowCognitive = (): JSX.Element => {
       <LowCognitiveHeader />
 
       <main className="w-full max-w-[1440px] mx-auto flex flex-col gap-6 p-8 translate-y-[-1rem] animate-fade-in opacity-0">
-        <PromptCard prompt={displayPrompt} />
+        <PromptCard
+          prompt={displayPrompt}
+          isEditing={isEditingPrompt}
+          draftPrompt={draftPrompt}
+          onDraftChange={setDraftPrompt}
+        />
 
-        <div className="flex justify-end [--animation-delay:400ms] translate-y-[-1rem] animate-fade-in opacity-0">
+        <div className="flex justify-end gap-3 [--animation-delay:400ms] translate-y-[-1rem] animate-fade-in opacity-0">
+          {isEditingPrompt && (
+            <Button
+              variant="ghost"
+              className="h-[52px] px-6 text-gray-500 hover:text-gray-700 transition-colors rounded-xl"
+              onClick={handleCancelEdit}
+            >
+              Cancel
+            </Button>
+          )}
           <Button
             variant="outline"
             className="h-[52px] px-6 bg-white border-2 border-violet-200 text-violet-700 hover:bg-violet-50 hover:border-violet-300 transition-colors rounded-xl"
+            onClick={isEditingPrompt ? handleSavePrompt : handleEditClick}
+            disabled={isEditingPrompt && !canSavePrompt}
           >
             <EditIcon className="w-4 h-4 mr-2" />
-            Edit
+            {isEditingPrompt ? "Save" : "Edit"}
           </Button>
         </div>
 
