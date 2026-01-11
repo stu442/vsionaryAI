@@ -6,9 +6,10 @@ interface ImagePreviewAreaProps {
     isLoading: boolean;
     imageSrc: string;
     prompt: string;
+    onRegenerate?: () => void;
 }
 
-export const ImagePreviewArea = ({ isLoading, imageSrc, prompt }: ImagePreviewAreaProps): JSX.Element => {
+export const ImagePreviewArea = ({ isLoading, imageSrc, prompt, onRegenerate }: ImagePreviewAreaProps): JSX.Element => {
     return (
         <div className="flex flex-col items-start gap-4">
             <div className="flex items-center justify-between w-full">
@@ -81,7 +82,7 @@ export const ImagePreviewArea = ({ isLoading, imageSrc, prompt }: ImagePreviewAr
                         <div className="flex items-center w-full">
                             <div className="inline-flex flex-col items-start gap-1">
                                 <div className="flex flex-col items-start w-full">
-                                    <p className="font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap [font-family:'Inter',Helvetica]">
+                                    <p className="font-medium text-white text-sm tracking-[0] leading-5 whitespace-normal [font-family:'Inter',Helvetica]">
                                         {prompt}
                                     </p>
                                 </div>
@@ -111,7 +112,7 @@ export const ImagePreviewArea = ({ isLoading, imageSrc, prompt }: ImagePreviewAr
 
                 <Button
                     variant="outline"
-                    className="h-auto inline-flex items-center justify-center gap-2 px-[55px] py-3.5 bg-[#1a1a24] hover:bg-[#252530] text-white rounded-lg border border-solid border-gray-700"
+                    className="h-auto inline-flex items-center justify-center gap-2 px-[55px] py-3.5 bg-[#1a1a24] hover:bg-[#252530] text-white hover:text-white rounded-lg border border-solid border-gray-700"
                 >
                     <img
                         className="flex-shrink-0"
@@ -125,7 +126,9 @@ export const ImagePreviewArea = ({ isLoading, imageSrc, prompt }: ImagePreviewAr
 
                 <Button
                     variant="outline"
-                    className="h-auto inline-flex items-center justify-center gap-2 px-[64px] py-3.5 bg-[#1a1a24] hover:bg-[#252530] text-white rounded-lg border border-solid border-gray-700"
+                    onClick={onRegenerate}
+                    disabled={isLoading}
+                    className="h-auto inline-flex items-center justify-center gap-2 px-[64px] py-3.5 bg-[#1a1a24] hover:bg-[#252530] text-white hover:text-white rounded-lg border border-solid border-gray-700 disabled:opacity-50"
                 >
                     <img
                         className="flex-shrink-0"

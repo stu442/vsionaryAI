@@ -3,18 +3,30 @@ import {
     CopyIcon,
     EditIcon,
     RefreshCwIcon,
+    Loader2,
 } from "lucide-react";
 import { Button } from "../../../../../components/ui/button";
 
-export const EditorActions = (): JSX.Element => {
+interface EditorActionsProps {
+    onRegenerate?: () => void;
+    isLoading?: boolean;
+}
+
+export const EditorActions = ({ onRegenerate, isLoading }: EditorActionsProps): JSX.Element => {
     return (
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
                 <Button
                     variant="outline"
-                    className="gap-2 bg-white border-slate-200 h-auto px-5 py-2.5 rounded-xl"
+                    onClick={onRegenerate}
+                    disabled={isLoading}
+                    className="gap-2 bg-white border-slate-200 h-auto px-5 py-2.5 rounded-xl disabled:opacity-50"
                 >
-                    <RefreshCwIcon className="w-4 h-4" />
+                    {isLoading ? (
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                        <RefreshCwIcon className="w-4 h-4" />
+                    )}
                     <span className="text-base font-medium text-slate-700 [font-family:'Inter',Helvetica]">
                         Regenerate
                     </span>

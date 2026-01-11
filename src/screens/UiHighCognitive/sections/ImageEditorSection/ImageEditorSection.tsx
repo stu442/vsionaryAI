@@ -32,8 +32,12 @@ export const ImageEditorSection = (): JSX.Element => {
           isLoading={isLoading}
           imageSrc={generatedImage || "https://c.animaapp.com/mk80hrbdo2FHxK/img/futuristic-city-skyline-at-sunset-with-many-flying-cars--vibrant.png"}
           prompt={prompt || "Futuristic cityscape with dramatic sky"}
+          onRegenerate={() => handleGenerate()}
         />
-        <QuickRefinements />
+        <QuickRefinements 
+          isLoading={isLoading}
+          onRefine={(refinement) => handleGenerate(`${prompt}, ${refinement}`)}
+        />
       </div>
 
       <ImprovementFooter />
