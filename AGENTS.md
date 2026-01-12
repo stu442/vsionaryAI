@@ -1,10 +1,43 @@
+# Core Engineering Principles
+
+All agents must follow these principles.
+
+### SOLID
+- **SRP**: One responsibility per module
+- **OCP**: Extend without modifying existing code
+- **LSP**: Subtypes must be safely substitutable
+- **ISP**: No unused interface dependencies
+- **DIP**: Depend on abstractions, not implementations
+
+### KISS
+- Prefer the simplest working solution
+- Avoid unnecessary abstractions and premature optimization
+- Readability over cleverness
+
+### DRY
+- Do not duplicate logic or domain knowledge
+- Extract shared logic when duplication adds maintenance cost
+
 # Repository Guidelines
 
 ## Response & Core Rules
-- Responses in this repository should be written in Korean.
-- Whenever environment variables change or are added, update `.env.example`.
+
+### Language Policy
+- All agent responses MUST be written in Korean.
+- English may be used only for code, identifiers, or documentation content when explicitly requested.
+
+### Changelog Rules
+- All meaningful changes MUST be recorded in `docs/CHANGELOG.md` under [Unreleased] or the current date.
+- Each entry MUST include an author tag (e.g. @username).
 - Create and maintain `docs/CHANGELOG.md` in Korean, with detailed entries by date.
-- 작업 완료 시 수정한 파일 목록을 반드시 안내한다.
+
+### Response Change Summary
+- When providing an answer that includes code or file changes, agents MUST include a brief summary of:
+  - Modified files
+  - What was changed in each file
+
+### General Rules
+- Whenever environment variables change or are added, update `.env.example`.
 
 ## Project Structure & Module Organization
 - `src/` holds application code.

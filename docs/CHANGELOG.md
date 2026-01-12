@@ -45,3 +45,4 @@
 - Vite 정적 파일 디렉터리를 `public/`으로 설정해 favicon 등 정적 자산이 정상 제공되도록 수정 (@frogsoo).
 - Storybook에서 이미지 API 강제 비활성화 설정 제거 (@frogsoo).
 - 화면 그래프(.screen-graph) 최신화 (@frogsoo).
+- AGENTS.md 문서에 Core Engineering Principles(SOLID, KISS, DRY) 및 Changelog/응답 규칙 추가 (@frogsoo).
