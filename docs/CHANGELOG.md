@@ -48,3 +48,5 @@
 - 화면 그래프(.screen-graph) 최신화 (@frogsoo).
 - AGENTS.md 문서에 Core Engineering Principles(SOLID, KISS, DRY) 및 Changelog/응답 규칙 추가 (@frogsoo).
 - 이미지 생성/보정 API를 gpt-image-1 기반으로 전환 (@frogsoo).
+- UiLowCognitive 다운로드 버튼 라벨 오탈자 수정 (@frogsoo).
+- UiLowCognitive 이미지 결과 카드 레이아웃 정렬 및 비율 개선 (@frogsoo).

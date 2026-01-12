@@ -90,8 +90,10 @@ export const useImageGeneration = () => {
         }
 
         try {
-            console.log("🧩 Calling Image Edit API with refine text:", refineTextToUse);
-            const data = await imageService.editImage(imageUrlToUse, refineTextToUse);
+            // Combine original prompt with refinement text for GPT Image edit
+            const fullPrompt = `${prompt}, ${refineTextToUse}`;
+            console.log("🧩 Calling Image Edit API with prompt:", fullPrompt);
+            const data = await imageService.editImage(imageUrlToUse, fullPrompt);
             setGeneratedImage(data.imageUrl);
 
             const nextUsage = { date: usage.date, count: usage.count + 1 };

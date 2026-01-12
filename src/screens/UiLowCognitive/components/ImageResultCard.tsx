@@ -15,7 +15,7 @@ export const ImageResultCard = ({
     return (
         <Card className="border border-gray-200 shadow-[0px_1px_2px_#0000000d] [--animation-delay:600ms] translate-y-[-1rem] animate-fade-in opacity-0">
             <CardContent className="p-4">
-                <div className="relative w-full h-[680px] bg-gray-50 rounded-xl overflow-hidden">
+                <div className="relative w-full max-w-[680px] aspect-square mx-auto bg-gray-50 rounded-xl overflow-hidden shadow-sm">
                     <img
                         className="w-full h-full object-cover"
                         alt={alt}

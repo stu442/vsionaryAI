@@ -53,10 +53,8 @@ export const imageService = {
             throw new Error("Failed to generate image: No image data received");
         }
 
-        const imageUrl = `data:image/png;base64,${base64Image}`;
-
         return {
-            imageUrl,
+            imageUrl: `data:image/png;base64,${base64Image}`,
         };
     },
     editImage: async (imageUrl: string, prompt: string): Promise<EditImageResponse> => {
@@ -73,7 +71,6 @@ export const imageService = {
         formData.append("image", imageFile);
         formData.append("prompt", prompt);
         formData.append("size", "1024x1024");
-        formData.append("format", "png");
 
         const response = await fetch("https://api.openai.com/v1/images/edits", {
             method: "POST",
@@ -95,10 +92,8 @@ export const imageService = {
             throw new Error("Failed to edit image: No image data received");
         }
 
-        const finalImageUrl = base64Image ? `data:image/png;base64,${base64Image}` : urlImage;
-
         return {
-            imageUrl: finalImageUrl,
+            imageUrl: base64Image ? `data:image/png;base64,${base64Image}` : urlImage,
         };
     },
 };
