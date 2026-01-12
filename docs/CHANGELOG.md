@@ -39,3 +39,6 @@
 - UiLowCognitive 프롬프트 저장 시 변경된 문구로 이미지 재생성 API 호출.
 - 이미지 Refine용 API(`/v1/images/edits`) 연동 추가 및 기존 이미지+Refine Text 기반 보정 로직 적용.
 - UiHighCognitive/UiMedium 이미지 에디터에서 Refine/Variations 동작을 기존 이미지 기반 편집 호출로 변경.
+
+## 2026-01-12
+- 이미지 편집 요청에서 `gpt-image-1`에 미지원인 `response_format` 파라미터를 제거하고 `format` 사용으로 수정 (@frogsoo).

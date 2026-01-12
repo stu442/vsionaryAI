@@ -73,7 +73,7 @@ export const imageService = {
         formData.append("image", imageFile);
         formData.append("prompt", prompt);
         formData.append("size", "1024x1024");
-        formData.append("response_format", "b64_json");
+        formData.append("format", "png");
 
         const response = await fetch("https://api.openai.com/v1/images/edits", {
             method: "POST",
