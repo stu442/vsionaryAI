@@ -16,9 +16,6 @@ const config: StorybookConfig = {
   framework: "@storybook/react-vite",
   async viteFinal(config) {
     return mergeConfig(config, {
-      define: {
-        "import.meta.env.VITE_IMAGE_API_ENABLED": JSON.stringify("false"),
-      },
     });
   },
 };

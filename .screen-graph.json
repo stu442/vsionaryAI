@@ -36,18 +36,34 @@
   ],
   "edges": [
     {
-      "id": "src/screens/UiLowCognitive/components/LowCognitiveHeader.tsx:14:16-to-src/screens/Desktop/Desktop.tsx",
-      "source": "src/screens/UiLowCognitive/UiLowCognitive.tsx",
+      "id": "src/components/Logo.tsx:11:8-to-src/screens/Desktop/Desktop.tsx",
+      "source": "src/screens/Desktop/Desktop.tsx",
       "target": "src/screens/Desktop/Desktop.tsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link to=\"/\" className=\"flex items-center gap-3 hover:opacity-80 transition-opacity\">\n                    <img\n                        className=\"w-8 h-8\"\n                        alt=\"Visionary AI Logo\"\n                        src=\"https://c.animaapp.com/mk80hrbdo2FHxK/img/background.svg\"\n                    />\n                    <span className=\"[font-family:'Inter',Helvetica] font-normal text-gray-900 text-xl leading-7\">\n                        Visionary AI\n                    </span>\n                </Link>",
-          "line": 14,
-          "endLine": 23,
-          "column": 16,
-          "endColumn": 23,
-          "sourceFile": "src/screens/UiLowCognitive/components/LowCognitiveHeader.tsx"
+          "element": "<Link to=\"/\" className={`flex items-center gap-3 hover:opacity-80 transition-opacity ${className}`}>\n            <img\n                className={imgClassName}\n                alt=\"Visionary AI Logo\"\n                src=\"https://c.animaapp.com/mk80hrbdo2FHxK/img/background.svg\"\n            />\n            <span className={`[font-family:'Inter',Helvetica] font-normal text-gray-900 text-xl leading-7 ${textClassName}`}>\n                Visionary AI\n            </span>\n        </Link>",
+          "line": 11,
+          "endLine": 20,
+          "column": 8,
+          "endColumn": 15,
+          "sourceFile": "src/components/Logo.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/components/Logo.tsx:11:8-to-src/screens/Desktop/Desktop.tsx",
+      "source": "src/screens/Desktop/Desktop.tsx",
+      "target": "src/screens/Desktop/Desktop.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className={`flex items-center gap-3 hover:opacity-80 transition-opacity ${className}`}>\n            <img\n                className={imgClassName}\n                alt=\"Visionary AI Logo\"\n                src=\"https://c.animaapp.com/mk80hrbdo2FHxK/img/background.svg\"\n            />\n            <span className={`[font-family:'Inter',Helvetica] font-normal text-gray-900 text-xl leading-7 ${textClassName}`}>\n                Visionary AI\n            </span>\n        </Link>",
+          "line": 11,
+          "endLine": 20,
+          "column": 8,
+          "endColumn": 15,
+          "sourceFile": "src/components/Logo.tsx"
         }
       }
     },
@@ -68,47 +84,47 @@
       }
     },
     {
-      "id": "src/screens/UiHighCognitive/sections/SessionListSection/components/SessionHeader.tsx:10:16-to-src/screens/Desktop/Desktop.tsx",
-      "source": "src/screens/UiHighCognitive/UiHighCognitive.tsx",
+      "id": "src/components/Logo.tsx:11:8-to-src/screens/Desktop/Desktop.tsx",
+      "source": "src/screens/Desktop/Desktop.tsx",
       "target": "src/screens/Desktop/Desktop.tsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link to=\"/\" className=\"hover:opacity-80 transition-opacity\">\n                    <h1 className=\"text-xl font-normal text-gray-900 [font-family:'Inter',Helvetica]\">\n                        ImageCraft AI\n                    </h1>\n                </Link>",
-          "line": 10,
-          "endLine": 14,
-          "column": 16,
-          "endColumn": 23,
-          "sourceFile": "src/screens/UiHighCognitive/sections/SessionListSection/components/SessionHeader.tsx"
+          "element": "<Link to=\"/\" className={`flex items-center gap-3 hover:opacity-80 transition-opacity ${className}`}>\n            <img\n                className={imgClassName}\n                alt=\"Visionary AI Logo\"\n                src=\"https://c.animaapp.com/mk80hrbdo2FHxK/img/background.svg\"\n            />\n            <span className={`[font-family:'Inter',Helvetica] font-normal text-gray-900 text-xl leading-7 ${textClassName}`}>\n                Visionary AI\n            </span>\n        </Link>",
+          "line": 11,
+          "endLine": 20,
+          "column": 8,
+          "endColumn": 15,
+          "sourceFile": "src/components/Logo.tsx"
         }
       }
     },
     {
-      "id": "src/screens/UiMedium/sections/SessionListSection/components/SessionHeader.tsx:10:16-to-src/screens/Desktop/Desktop.tsx",
-      "source": "src/screens/UiMedium/UiMedium.tsx",
+      "id": "src/components/Logo.tsx:11:8-to-src/screens/Desktop/Desktop.tsx",
+      "source": "src/screens/Desktop/Desktop.tsx",
       "target": "src/screens/Desktop/Desktop.tsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link to=\"/\" className=\"hover:opacity-80 transition-opacity\">\n                    <h1 className=\"text-xl font-normal text-gray-900 [font-family:'Inter',Helvetica]\">\n                        ImageCraft AI\n                    </h1>\n                </Link>",
-          "line": 10,
-          "endLine": 14,
-          "column": 16,
-          "endColumn": 23,
-          "sourceFile": "src/screens/UiMedium/sections/SessionListSection/components/SessionHeader.tsx"
+          "element": "<Link to=\"/\" className={`flex items-center gap-3 hover:opacity-80 transition-opacity ${className}`}>\n            <img\n                className={imgClassName}\n                alt=\"Visionary AI Logo\"\n                src=\"https://c.animaapp.com/mk80hrbdo2FHxK/img/background.svg\"\n            />\n            <span className={`[font-family:'Inter',Helvetica] font-normal text-gray-900 text-xl leading-7 ${textClassName}`}>\n                Visionary AI\n            </span>\n        </Link>",
+          "line": 11,
+          "endLine": 20,
+          "column": 8,
+          "endColumn": 15,
+          "sourceFile": "src/components/Logo.tsx"
         }
       }
     },
     {
-      "id": "src/screens/UiMedium/sections/ImageEditorSection/components/EditorActions.tsx:140:27-to-src/screens/Desktop/Desktop.tsx",
+      "id": "src/screens/UiMedium/sections/ImageEditorSection/components/EditorActions.tsx:139:27-to-src/screens/Desktop/Desktop.tsx",
       "source": "src/screens/UiMedium/UiMedium.tsx",
       "target": "src/screens/Desktop/Desktop.tsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
           "element": "navigate(\"/\")",
-          "line": 140,
-          "endLine": 140,
+          "line": 139,
+          "endLine": 139,
           "column": 27,
           "endColumn": 40,
           "sourceFile": "src/screens/UiMedium/sections/ImageEditorSection/components/EditorActions.tsx"
