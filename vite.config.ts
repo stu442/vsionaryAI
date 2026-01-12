@@ -7,7 +7,7 @@ import { defineConfig } from "vitest/config";
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [react(), mode === "development" && screenGraphPlugin(), storybookTest()],
-  publicDir: "./static",
+  publicDir: "./public",
   base: "./",
   css: {
     postcss: {
