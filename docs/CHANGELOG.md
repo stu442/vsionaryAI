@@ -52,3 +52,4 @@
 - UiHighCognitive/UiMedium 이미지 프리뷰 액션 아이콘 UI 교체 (@frogsoo).
 - UiHighCognitive 이미지 프리뷰 영역 배경 및 오버플로우 스타일 보강 (@frogsoo).
 - UiLowCognitive 이미지 결과 카드 레이아웃/스타일 보정 (@frogsoo).
+- 샘플 이미지 에셋 추가 (`src/assets/sample/image.png`) (@frogsoo).
