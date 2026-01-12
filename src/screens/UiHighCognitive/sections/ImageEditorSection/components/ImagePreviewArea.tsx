@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Loader2 } from "lucide-react";
+import { Download, Loader2, Maximize } from "lucide-react";
 import { Badge } from "../../../../../components/ui/badge";
 import { Button } from "../../../../../components/ui/button";
 import { Textarea } from "../../../../../components/ui/textarea";
@@ -52,16 +52,19 @@ export const ImagePreviewArea = ({
                     </Badge>
                 </div>
 
-                <img
-                    className="flex-shrink-0"
-                    alt="Actions"
-                    src="https://c.animaapp.com/mk80hrbdo2FHxK/img/container-13.svg"
-                />
+                <div className="flex items-center gap-2">
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-[#9CA3AF] hover:bg-gray-100 rounded-lg">
+                        <Download className="w-5 h-5" />
+                    </Button>
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-[#9CA3AF] hover:bg-gray-100 rounded-lg">
+                        <Maximize className="w-5 h-5" />
+                    </Button>
+                </div>
             </div>
 
             <div className="bg-[#13131a] w-full overflow-hidden border-[#a855f74c] shadow-[0px_25px_50px_-12px_#00000040] flex flex-col items-start rounded-xl border-2 border-solid translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
                 <div className="flex flex-col w-full items-start relative">
-                    <div className="w-full max-h-[500px] h-[500px] relative">
+                    <div className="w-full max-h-[500px] h-[500px] relative bg-black overflow-hidden">
                         {isLoading ? (
                             <div className="w-full h-full flex flex-col items-center justify-center bg-gray-900">
                                 <Loader2 className="w-10 h-10 text-purple-500 animate-spin mb-4" />

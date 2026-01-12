@@ -49,3 +49,5 @@
 - AGENTS.md 문서에 Core Engineering Principles(SOLID, KISS, DRY) 및 Changelog/응답 규칙 추가 (@frogsoo).
 - 이미지 생성/보정 API를 gpt-image-1 기반으로 전환 (@frogsoo).
 - UiLowCognitive 다운로드 버튼 라벨 오탈자 수정 (@frogsoo).
+- UiHighCognitive/UiMedium 이미지 프리뷰 액션 아이콘 UI 교체 (@frogsoo).
+- UiHighCognitive 이미지 프리뷰 영역 배경 및 오버플로우 스타일 보강 (@frogsoo).

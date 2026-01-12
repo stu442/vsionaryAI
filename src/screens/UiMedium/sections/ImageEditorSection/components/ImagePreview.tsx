@@ -1,6 +1,7 @@
-import { ClockIcon, Loader2 } from "lucide-react";
+import { ClockIcon, Download, Loader2, Maximize } from "lucide-react";
 import { Badge } from "../../../../../components/ui/badge";
 import { Card, CardContent } from "../../../../../components/ui/card";
+import { Button } from "../../../../../components/ui/button";
 
 interface ImagePreviewProps {
     isLoading: boolean;
@@ -25,10 +26,14 @@ export const ImagePreview = ({ isLoading, imageSrc, prompt }: ImagePreviewProps)
                         </span>
                     </Badge>
                 </div>
-                <img
-                    alt="Options"
-                    src="https://c.animaapp.com/mk80hrbdo2FHxK/img/container-13.svg"
-                />
+                <div className="flex items-center gap-2">
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-[#9CA3AF] hover:bg-gray-100 rounded-lg">
+                        <Download className="w-5 h-5" />
+                    </Button>
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-[#9CA3AF] hover:bg-gray-100 rounded-lg">
+                        <Maximize className="w-5 h-5" />
+                    </Button>
+                </div>
             </div>
 
             <Card className="overflow-hidden border-2 border-[#a855f74c] bg-[#13131a] shadow-[0px_25px_50px_-12px_#00000040] rounded-xl">
