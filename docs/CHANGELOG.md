@@ -41,8 +41,10 @@
 - UiHighCognitive/UiMedium 이미지 에디터에서 Refine/Variations 동작을 기존 이미지 기반 편집 호출로 변경.
 
 ## 2026-01-12
+- OpenAI API 호출 시 가성비 모델(dall-e-2)로 변경하고 잘못된 format 파라미터 제거 수정 (@frogsoo).
 - 이미지 편집 요청에서 `gpt-image-1`에 미지원인 `response_format` 파라미터를 제거하고 `format` 사용으로 수정 (@frogsoo).
 - Vite 정적 파일 디렉터리를 `public/`으로 설정해 favicon 등 정적 자산이 정상 제공되도록 수정 (@frogsoo).
 - Storybook에서 이미지 API 강제 비활성화 설정 제거 (@frogsoo).
 - 화면 그래프(.screen-graph) 최신화 (@frogsoo).
 - AGENTS.md 문서에 Core Engineering Principles(SOLID, KISS, DRY) 및 Changelog/응답 규칙 추가 (@frogsoo).
+- 이미지 생성/보정 API를 gpt-image-1 기반으로 전환 (@frogsoo).
