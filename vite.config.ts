@@ -8,7 +8,7 @@ import { defineConfig } from "vitest/config";
 export default defineConfig(({ mode }) => ({
   plugins: [react(), mode === "development" && screenGraphPlugin(), storybookTest()],
   publicDir: "./public",
-  base: "./",
+  base: "/",
   css: {
     postcss: {
       plugins: [tailwind()],

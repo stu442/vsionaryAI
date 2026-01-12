@@ -55,3 +55,4 @@
 - 샘플 이미지 에셋 추가 (`src/assets/sample/image.png`) (@frogsoo).
 - 이미지 생성 일일 한도를 30회로 상향 조정 (@frogsoo).
 - 이미지 생성/보정 오류 메시지를 화면에 노출하도록 추가 (@frogsoo).
+- Vite 기본 base 경로를 `/`로 변경 (@frogsoo).
