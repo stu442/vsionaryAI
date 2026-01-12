@@ -18,7 +18,7 @@ photorealistic, 8k resolution, professional photography`;
 export const UiLowCognitive = (): JSX.Element => {
   const [searchParams] = useSearchParams();
   const urlPrompt = searchParams.get("prompt");
-  const { prompt, setPrompt, isLoading, generatedImage, handleGenerate } = useImageGeneration();
+  const { prompt, setPrompt, isLoading, generatedImage, error, handleGenerate } = useImageGeneration();
   const [isEditingPrompt, setIsEditingPrompt] = useState(false);
   const [draftPrompt, setDraftPrompt] = useState("");
 
@@ -90,6 +90,12 @@ export const UiLowCognitive = (): JSX.Element => {
             {isEditingPrompt ? "Save" : "Edit"}
           </Button>
         </div>
+
+        {error && (
+          <div className="w-full p-4 bg-red-50 border border-red-200 text-red-600 rounded-xl flex items-center gap-3">
+            <span className="font-medium">Error:</span> {error}
+          </div>
+        )}
 
         {isLoading ? (
           <div className="w-full h-[600px] flex flex-col items-center justify-center bg-white rounded-xl border-2 border-dashed border-gray-200 animate-pulse">

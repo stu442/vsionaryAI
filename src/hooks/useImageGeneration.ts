@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { imageService } from "../api/image";
 
-const DAILY_LIMIT = 10;
+const DAILY_LIMIT = 30;
 const STORAGE_KEY = "image-generation-usage";
 
 const getTodayKey = () => new Date().toISOString().slice(0, 10);

@@ -11,7 +11,7 @@ import { EditorTip } from "./components/EditorTip";
 export const ImageEditorSection = (): JSX.Element => {
   const [searchParams] = useSearchParams();
   const urlPrompt = searchParams.get("prompt");
-  const { prompt, setPrompt, isLoading, generatedImage, handleGenerate, handleRefine } = useImageGeneration();
+  const { prompt, setPrompt, isLoading, generatedImage, error, handleGenerate, handleRefine } = useImageGeneration();
   const [selectedRefinements, setSelectedRefinements] = useState<string[]>([]);
 
   useEffect(() => {
@@ -58,13 +58,19 @@ export const ImageEditorSection = (): JSX.Element => {
     <section className="flex flex-col flex-1 self-stretch bg-gray-50">
       <EditorHeader title={prompt || "Cyberpunk cityscape refinement"} />
 
+      {error && (
+        <div className="w-full px-8 py-3 bg-red-50 border-b border-red-200 text-red-600 flex items-center gap-3">
+          <span className="font-medium">Error:</span> {error}
+        </div>
+      )}
+
       <div className="flex-1 relative">
         <ImagePreview
           isLoading={isLoading}
           imageSrc={generatedImage || "https://c.animaapp.com/mk80hrbdo2FHxK/img/futuristic-city-skyline-at-sunset-with-many-flying-cars--vibrant-1.png"}
           prompt={prompt || "Futuristic cityscape with dramatic sky"}
         />
-        <QuickRefinements 
+        <QuickRefinements
           onRefine={handleToggleRefinement}
           selectedRefinements={selectedRefinements}
           isLoading={isLoading}
@@ -72,15 +78,15 @@ export const ImageEditorSection = (): JSX.Element => {
 
         <div className="flex flex-col gap-6 max-w-[1024px] mt-10 ml-[31px]">
           <GenerationDetails />
-          <EditorActions 
+          <EditorActions
             onRegenerate={() => {
               console.log("🔄 [UiMedium] Regenerating original prompt:", prompt);
               handleGenerate(prompt);
-            }} 
+            }}
             onVariations={handleVariations}
             prompt={prompt || ""}
             onSavePrompt={handleSavePrompt}
-            isLoading={isLoading} 
+            isLoading={isLoading}
           />
           <EditorTip />
         </div>

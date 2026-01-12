@@ -9,7 +9,7 @@ import { ImprovementFooter } from "./components/ImprovementFooter";
 export const ImageEditorSection = (): JSX.Element => {
   const [searchParams] = useSearchParams();
   const urlPrompt = searchParams.get("prompt");
-  const { prompt, setPrompt, isLoading, generatedImage, handleGenerate, handleRefine } = useImageGeneration();
+  const { prompt, setPrompt, isLoading, generatedImage, error, handleGenerate, handleRefine } = useImageGeneration();
 
   // Change state to array for toggling
   const [selectedRefinements, setSelectedRefinements] = useState<string[]>([]);
@@ -50,6 +50,12 @@ export const ImageEditorSection = (): JSX.Element => {
   return (
     <section className="flex flex-col items-start flex-1 self-stretch grow bg-gray-50">
       <EditorHeader title={prompt || "Cyberpunk cityscape refinement"} />
+
+      {error && (
+        <div className="w-full px-8 py-3 bg-red-50 border-b border-red-200 text-red-600 flex items-center gap-3">
+          <span className="font-medium">Error:</span> {error}
+        </div>
+      )}
 
       <div className="flex-1 w-full flex gap-8 p-8 max-w-[1600px] mx-auto">
         <div className="flex-1 min-w-0 w-full">
